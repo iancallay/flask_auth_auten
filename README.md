@@ -1,7 +1,7 @@
 
-# Demo Flask: Autenticación vs Autorización + Hash de contraseñas + .env
+# Flask: Autenticación vs Autorización + Hash de contraseñas + .env
 
-Mini app que muestra:
+App que muestra:
 - **Autenticación** (login) y **Autorización** (acceso por rol).
 - **Hash de contraseñas** con `werkzeug.security` (PBKDF2-SHA256).
 - **Protección de datos sensibles** usando variables de entorno (`SECRET_KEY`, `DATABASE_URL`) cargadas con `python-dotenv`.
@@ -11,16 +11,15 @@ Mini app que muestra:
 
 ## Instalación
 ```bash
-cd flask_auth_demo
+cd flask_auth_auten
 python -m venv .venv
 # Windows: .venv\Scripts\activate
-# Linux/Mac: source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
 Crea un archivo `.env` (o copia `.env.example`):
 ```
-SECRET_KEY=pon-aqui-un-secreto-largo-y-unico
+SECRET_KEY=ef5c00b968c4c14d2f3c698632d9c5a6d0729217d205bc6d4085fad1cebf5e07
 DATABASE_URL=sqlite:///app.db
 ```
 
@@ -28,13 +27,13 @@ DATABASE_URL=sqlite:///app.db
 ```bash
 flask --app app.py init-db
 ```
-Esto crea las tablas y un admin: `usuario=admin`, `password=admin123` (cámbialo luego).
+Esto crea las tablas y un admin: `usuario=admin`, `password=admin123` (recuerden cambiarlo luego).
 
 ## Ejecuta
 ```bash
 flask --app app.py run
 ```
-Abre http://127.0.0.1:5000
+Se abre por defecto la siguiente URL http://127.0.0.1:5000
 
 ## Prueba rápida
 1. Entra a **/register** y crea un usuario con rol `user`.
